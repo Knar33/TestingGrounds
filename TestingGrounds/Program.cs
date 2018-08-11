@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace TestingGrounds
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+        }
+
+        public bool whatever()
+        {
+            return (true);
+        }
+
+        public int return() {
+
         }
     }
 }
