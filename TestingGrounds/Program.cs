@@ -16,6 +16,8 @@ namespace TestingGrounds
             List<Summer> c = new List<Summer>();
 
             decimal? d = c.Sum(x => x.WeightInPounds);
+
+            decimal? e = a.WeightInPounds + b.WeightInPounds;
         }
 
         public class Summer
