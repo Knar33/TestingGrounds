@@ -10,15 +10,17 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
+            Summer a = new Summer { WeightInPounds = null };
+            Summer b = new Summer { WeightInPounds = 26 };
+
+            List<Summer> c = new List<Summer>();
+
+            decimal? d = c.Sum(x => x.WeightInPounds);
         }
 
-        public bool whatever()
+        public class Summer
         {
-            return (true);
-        }
-
-        public int return() {
-
+            public decimal? WeightInPounds { get; set; }
         }
     }
 }
