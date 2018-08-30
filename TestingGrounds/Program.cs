@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,7 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            string PostalCode = "60187";
-            string trackingNumber = "9405511298370362193633";
-            string BarCode = "420" + (new string(PostalCode.Take(5).ToArray())) + trackingNumber;
-
+            string dateDelivered = DateTimeOffset.ParseExact("20180829044930", "yyyyMMddHHmmss", CultureInfo.CurrentCulture).ToString();
         }
     }
 }
