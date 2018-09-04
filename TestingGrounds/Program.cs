@@ -11,7 +11,7 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            string dateDelivered = DateTimeOffset.ParseExact("20180829044930", "yyyyMMddHHmmss", CultureInfo.CurrentCulture).ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz");
+            DateTimeOffset date = DateTimeOffset.Now;
         }
     }
 }
