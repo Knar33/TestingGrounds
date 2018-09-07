@@ -11,60 +11,26 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            List<OrderDetail> orderDetails = new List<OrderDetail>();
-            orderDetails.Add(new OrderDetail { WeightInPounds = null });
-            orderDetails.Add(new OrderDetail { WeightInPounds = null });
-            orderDetails.Add(new OrderDetail { WeightInPounds = null });
-
-            Package package = new Package(orderDetails);
-
-            foreach (PackageDetail packageDetail in package.PackageDetails)
-            {
-                packageDetail.WeightInPounds = 1m;
-            }
-
-            if (package.WeightInPounds != null && package.WeightInPounds != 0)
-            {
-                Console.WriteLine("Not Null or 0");
-            }
-            else
-            {
-                Console.WriteLine("Null or 0");
-            }
-
-            Console.ReadLine();
+            
         }
     }
 
-    public class Package
+    public class Kit
     {
-        public Package(List<OrderDetail> orderDetails)
+        public Kit()
         {
-            PackageDetails = new List<PackageDetail>();
-
-            foreach (OrderDetail orderDetail in orderDetails)
-            {
-                PackageDetails.Add(new PackageDetail(orderDetail));
-            }
-
-            WeightInPounds = PackageDetails.Sum(x => x.WeightInPounds);
+            Components = new List<Component>();
         }
 
-        public List<PackageDetail> PackageDetails { get; set; }
-
-        public decimal? WeightInPounds { get; set; }
+        public string SKU { get; set; }
+        public List<Component> Components { get; set; }
     }
 
-    public class PackageDetail
+    public class Component
     {
-        public PackageDetail(OrderDetail orderDetail)
-        {
-        }
-        public decimal? WeightInPounds { get; set; }
-    }
-
-    public class OrderDetail
-    {
-        public decimal? WeightInPounds { get; set; }
+        public string SKU { get; set; }
+        public int Quantity { get; set; }
+        public decimal Value { get; set; }
+        public string HSCode { get; set; }
     }
 }
