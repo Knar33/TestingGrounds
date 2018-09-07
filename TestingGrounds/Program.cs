@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace TestingGrounds
 {
@@ -11,7 +13,14 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            
+            List<Kit> kits = new List<Kit>();
+
+            // deserialize JSON directly from a file
+            using (StreamReader file = new StreamReader(@"C:\Users\xxx\Documents\Kits.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                kits = (List<Kit>)serializer.Deserialize(file, typeof(List<Kit>));
+            }
         }
     }
 
