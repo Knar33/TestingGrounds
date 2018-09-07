@@ -16,7 +16,7 @@ namespace TestingGrounds
             List<Kit> kits = new List<Kit>();
 
             // deserialize JSON directly from a file
-            using (StreamReader file = new StreamReader(@"C:\Users\xxx\Documents\Kits.json"))
+            using (StreamReader file = new StreamReader(@"C:\Automation\Hairstory\allCountries.txt")))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 kits = (List<Kit>)serializer.Deserialize(file, typeof(List<Kit>));
