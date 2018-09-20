@@ -13,33 +13,7 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            List<Kit> kits = new List<Kit>();
-
-            // deserialize JSON directly from a file
-            using (StreamReader file = new StreamReader(@"C:\Automation\Hairstory\allCountries.txt")))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                kits = (List<Kit>)serializer.Deserialize(file, typeof(List<Kit>));
-            }
+            File.Delete(@"C:\Users\USER_0137\Documents\FileThatDoesntExist.txt"); 
         }
-    }
-
-    public class Kit
-    {
-        public Kit()
-        {
-            Components = new List<Component>();
-        }
-
-        public string SKU { get; set; }
-        public List<Component> Components { get; set; }
-    }
-
-    public class Component
-    {
-        public string SKU { get; set; }
-        public int Quantity { get; set; }
-        public decimal Value { get; set; }
-        public string HSCode { get; set; }
     }
 }
