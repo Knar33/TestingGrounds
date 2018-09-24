@@ -20,6 +20,14 @@ namespace TestingGrounds
 
             RateRequest request = new RateRequest()
             {
+                /*
+                Required: Yes
+                Type: Container
+                Max Allowed: 1
+                Length: N/A
+                Common Request element
+                should be provided by users
+                */
                 Request = new RequestType()
                 {
                     /*
@@ -456,17 +464,21 @@ namespace TestingGrounds
                                     Address = new AddressType()
                                     {
                                         /*
-    
+                                        Required: Yes* Type: String Max Allowed: 3 Length: 1…35
+                                        The UPS Access Point's street address, including name and number (when applicable).
+                                        Length is not validated.
                                         */
                                         AddressLine = new string[] { },
 
                                         /*
-    
+                                        Required: Cond Type: String Max Allowed: 1 Length: 1…30
+                                        UPS Access Point city.
                                         */
                                         City = "",
 
                                         /*
-    
+                                        Required: Cond Type: String Max Allowed: 1 Length: 2
+                                        UPS Access Point State or Province code.
                                         */
                                         StateProvinceCode = "",
 
