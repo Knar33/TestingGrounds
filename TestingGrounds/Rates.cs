@@ -63,7 +63,10 @@ namespace TestingGrounds
                 },
 
                 /*
-                Required: No Type: Container Max Allowed: 1 Length: N/A
+                Required: No 
+                Type: Container
+                Max Allowed: 1 
+                Length: N/A
                 Customer classification container. Valid if ShipFrom country or territory is “US”
                 */
                 CustomerClassification = new CodeDescriptionType()
@@ -84,30 +87,36 @@ namespace TestingGrounds
                 },
 
                 /*
-                Required: No Type: Container Max Allowed: 1 Length: N/A
+                Required: No 
+                Type: Container 
+                Max Allowed: 1 
+                Length: N/A
                 Pickup Type container tag.
                 */
                 PickupType = new CodeDescriptionType()
                 {
                     /*
-                        Required: Yes* Type: String Max Allowed: 1 Length: 2
-                        Pickup Type Code.
-                        Valid values: 01 - Daily Pickup (Default - used when an invalid pickup type code is provided) 03 - Customer Counter 06 - One Time Pickup 19 - Letter Center 20 - Air Service Center
-                        Length is not validated. When negotiated rates are requested, 07 (onCallAir) will be ignored.
-                        Refer to the Rate Types Table in the Appendix for rate type based on Pickup Type and Customer Classification Code.
+                    Required: Yes* Type: String Max Allowed: 1 Length: 2
+                    Pickup Type Code.
+                    Valid values: 01 - Daily Pickup (Default - used when an invalid pickup type code is provided) 03 - Customer Counter 06 - One Time Pickup 19 - Letter Center 20 - Air Service Center
+                    Length is not validated. When negotiated rates are requested, 07 (onCallAir) will be ignored.
+                    Refer to the Rate Types Table in the Appendix for rate type based on Pickup Type and Customer Classification Code.
                     */
                     Code = "",
 
                     /*
-                        Required: No Type: String Max Allowed: 1 Length: 1…35
-                        Pickup Type Description.
-                        Ignored if provided in the Request.
+                    Required: No Type: String Max Allowed: 1 Length: 1…35
+                    Pickup Type Description.
+                    Ignored if provided in the Request.
                     */
                     Description = ""
                 },
 
                 /*
-                Required: Yes Type: Container Max Allowed: 1 Length: N/A
+                Required: Yes 
+                Type: Container 
+                Max Allowed: 1 
+                Length: N/A
                 Container for Shipment Information.
                 */
                 Shipment = new ShipmentType()
@@ -429,6 +438,7 @@ namespace TestingGrounds
                                     The account must be a valid UPS account number that is active. For US, PR and CA accounts, the account must be a daily pickup account, an occasional account, a customer B.I.N account, or a dropper shipper account. All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
                                     */
                                     AccountNumber = "",
+
                                     /*
                                     Required: Cond Type: Container Max Allowed: 1 Length: N/A
                                     Container for additional information for the bill receiver’s UPS accounts address.
@@ -873,14 +883,13 @@ namespace TestingGrounds
                             DimWeight = new PackageWeightType()
                             {
                                 /*
-                                    Required: No Type: Container Max Allowed: 1 Length: N/A
+                                Required: No Type: Container Max Allowed: 1 Length: N/A
                                 UnitOfMeasurement Container.
-                                N   
                                 */
                                 UnitOfMeasurement = new CodeDescriptionType()
                                 {
                                     /*
-                                        Required: No Type: String Max Allowed: 1 Length: 3
+                                    Required: No Type: String Max Allowed: 1 Length: 3
                                     Code representing the unit of measure associated with the package weight. Codes are: LBS = Pounds, KGS = Kilograms.
                                     Valid values: “LBS” = Pounds (default) and “KGS” = Kilograms.   
                                     */
@@ -893,6 +902,7 @@ namespace TestingGrounds
                                     */
                                     Description = ""
                                 },
+
                                 /*
                                 Required: No Type: String Max Allowed: 1 Length: 6
                                 Dimensional weight of the package. Decimal values are not accepted, however there is one implied decimal place for values in this field (i.e. 115 = 11.5).    
@@ -1198,7 +1208,7 @@ namespace TestingGrounds
                                 VerbalConfirmationIndicator = "",
 
                                 /*
-                                    Required: No Type: String Max Allowed: 1 Length: 0
+                                Required: No Type: String Max Allowed: 1 Length: 0
                                 An UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances.
                                 Empty Tag means indicator is present. Valid only for Canada to Canada movements. Available for the following Return Services: Returns Exchange (available with a contract) Print Return Label Print and Mail Electronic Return Label Return Service Three Attempt May be requested with following UPS services: UPS Express® Early UPS Express UPS Express Saver UPS Standard. Not available for packages with the following: Delivery Confirmation - Signature Required Delivery Confirmation - Adult Signature Required.   
                                 */
@@ -1212,7 +1222,7 @@ namespace TestingGrounds
                                 HazMat = new HazMatType()
                                 {
                                     /*
-                                        Required: Cond Type: String Max Allowed: 1 Length: 1…5
+                                    Required: Cond Type: String Max Allowed: 1 Length: 1…5
                                     Identifies the package containing Dangerous Goods.
                                     Required if SubVersion is greater than or equal to 1701.   
                                     */
@@ -1334,7 +1344,7 @@ namespace TestingGrounds
                                             UOM = "",
 
                                             /*
-                                                Required: Cond Type: String Max Allowed: 1 Length: 1…353
+                                            Required: Cond Type: String Max Allowed: 1 Length: 1…353
                                             The packing instructions related to the chemical record. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
                                             Applies only if SubVersion is greater than or equal to 1701.   
                                             */
@@ -1348,7 +1358,7 @@ namespace TestingGrounds
                                             ProperShippingName = "",
 
                                             /*
-                                                Required: Cond Type: String Max Allowed: 1 Length: 1…300
+                                            Required: Cond Type: String Max Allowed: 1 Length: 1…300
                                             The technical name (when required) for the specified commodity. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
                                             Applies only if SubVersion is greater than or equal to 1701.   
                                             */
@@ -1460,7 +1470,7 @@ namespace TestingGrounds
                                     MedicalUseIndicator = "",
 
                                     /*
-                                        Required: No Type: String Max Allowed: 1 Length: 0
+                                    Required: No Type: String Max Allowed: 1 Length: 0
                                     Presence/Absence Indicator. Any value inside is ignored. Indicates a Dry Ice audit will be performed per the Regulation Set requirements. Empty tag means indicator is present.   
                                     */
                                     AuditRequired = ""
@@ -1477,7 +1487,7 @@ namespace TestingGrounds
                     },
 
                     /*
-                        Required: No Type: Container Max Allowed: 1 Length: N/A
+                    Required: No Type: Container Max Allowed: 1 Length: N/A
                     Shipment level Accessorials are included in this container.   
                     */
                     ShipmentServiceOptions = new ShipmentServiceOptionsType()
@@ -1490,7 +1500,7 @@ namespace TestingGrounds
                         SaturdayPickupIndicator = "",
 
                         /*
-                            Required: No Type: String Max Allowed: 1 Length: 0
+                        Required: No Type: String Max Allowed: 1 Length: 0
                         A flag indicating if a shipment must be delivered on a Saturday. True if SaturdayDeliveryIndicator tag exists; false otherwise
                         Empty Tag.   
                         */
@@ -1519,7 +1529,7 @@ namespace TestingGrounds
                         },
 
                         /*
-                            Required: No Type: String Max Allowed: 1 Length: 0
+                        Required: No Type: String Max Allowed: 1 Length: 0
                         Presence/Absence Indicator. Any value inside is ignored. DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point" package. Presence of indicator means shipper restriction will apply to the shipment.
                         Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point".   
                         */
@@ -1603,7 +1613,7 @@ namespace TestingGrounds
                         CertificateOfOriginIndicator = "",
 
                         /*
-                            Required: No Type: Container Max Allowed: 1 Length: N/A
+                        Required: No Type: Container Max Allowed: 1 Length: N/A
                         Shipment Service Pickup Options Container.
                         Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.   
                         */
