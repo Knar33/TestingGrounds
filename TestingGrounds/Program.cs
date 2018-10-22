@@ -17,6 +17,9 @@ namespace TestingGrounds
             {
                 int N = 10000000;
 
+                //print header of table
+                Console.WriteLine(string.Format("| {0} | {1} | {2} | {3} |", "N".ToString().PadRight(20, ' '), "Ninside".ToString().PadRight(20, ' '), "PIestimated".ToString().PadRight(20, ' '), "Error".ToString().PadRight(20, ' ')));
+
                 //generate a List<Tuple<double, double>>
                 Random random = new Random();
                 List<Tuple<double, double>> points = new List<Tuple<double, double>>();
@@ -32,21 +35,40 @@ namespace TestingGrounds
                     int randomPoints = Convert.ToInt32(Math.Pow(10.0, (double)i));
                     for (int p = 0; p < randomPoints; p++)
                     {
+                        double x = points[p].Item1;
+                        double y = points[p].Item2;
                         //plug in points[p].Item1 and points[p].Item2 as your x and y values
-                        if (Math.Pow(points[p].Item1, 2) + Math.Pow(points[p].Item2, 2) <= 1)
+                        if (Math.Pow(x, 2) + Math.Pow(y, 2) <= 1)
                         {
                             pointsInQuadrant++;
                         }
                     }
                     //check your ratio of pointsInQuanrant/randomPoints
-                    double nEstimated = 4.0 * (double)pointsInQuadrant / (double)randomPoints;
+                    double nEstimated = 4.0 * pointsInQuadrant / randomPoints;
                     double error = nEstimated / Math.PI;
-                    Console.WriteLine(string.Format("{0} | {1} | {2} | {3}", randomPoints, pointsInQuadrant, nEstimated, error));
+
                     //print line
+                    Console.WriteLine(string.Format("|{0}|{1}|{2}|{3}|", "".PadRight(22, '-'), "".PadRight(22, '-'), "".PadRight(22, '-'), "".PadRight(22, '-')));
+                    Console.WriteLine(string.Format("| {0} | {1} | {2} | {3} |", randomPoints.ToString().PadRight(20, ' '), pointsInQuadrant.ToString().PadRight(20, ' '), nEstimated.ToString().PadRight(20, ' '), error.ToString().PadRight(20, ' ')));
                 }
-                
+
+                //print footer of table
+                Console.WriteLine("".PadRight(93, '-'));
+
                 Console.ReadKey();
             }
+        }
+    }
+
+    public class Point
+    {
+        public double X { get; set; }
+        public double Y { get; set; }
+
+        public Point(double x, double y)
+        {
+            X = x;
+            Y = y;
         }
     }
 }
