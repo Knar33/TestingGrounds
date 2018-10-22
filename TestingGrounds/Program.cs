@@ -14,8 +14,9 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            int[][] edges = new int[2][];
-            edges[1][2] = 2;
+            TimeSpan span = new TimeSpan(0, 0, 240);
+            Console.Write(span.ToString());
+            Console.ReadLine();
         }
     }
 }
