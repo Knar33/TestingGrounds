@@ -18,7 +18,7 @@ namespace TestingGrounds
                 int N = 10000000;
 
                 //print header of table
-                Console.WriteLine(string.Format("| {0} | {1} | {2} | {3} |", "N".ToString().PadRight(20, ' '), "Ninside".ToString().PadRight(20, ' '), "PIestimated".ToString().PadRight(20, ' '), "Error".ToString().PadRight(20, ' ')));
+                Console.WriteLine(string.Format("| {0} | {1} | {2} | {3} |", "N".PadRight(20, ' '), "Ninside".PadRight(20, ' '), "PIestimated".PadRight(20, ' '), "Error".PadRight(20, ' ')));
 
                 //generate a List<Tuple<double, double>>
                 Random random = new Random();
