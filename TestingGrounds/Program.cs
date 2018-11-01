@@ -14,28 +14,15 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            collectionContainer container = new collectionContainer();
-            container.Collection = new List<int>() { 1, 2, 3 };
-            foreach (int thisInt in container.Collection)
-            {
-                thisInt = 1l;
-            }
-
-            List<int> otherCollection = new List<int>() { 1, 2, 3 };
-            foreach (int thisInt in container.Collection)
-            {
-                thisInt = 1l;
-            }
+            decimal? num = 0.0600m;
+            float finalNum = (float)(Math.Max(num * 16 ?? 0, 1.0m));
+            Console.WriteLine(finalNum);
+            
+            num = 0.2340m;
+            finalNum = (float)(Math.Max(num * 16 ?? 0, 1.0m));
+            Console.WriteLine(finalNum);
+            Console.ReadLine();
         }
-    }
 
-    public class collectionContainer
-    {
-        public IReadOnlyCollection<ComplexObject> Collection { get; set; }
-    }
-
-    public class ComplexObject
-    {
-        public int ComplexProperty { get; set; }
     }
 }
