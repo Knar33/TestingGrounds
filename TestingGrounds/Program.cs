@@ -14,15 +14,22 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            decimal? num = 0.0600m;
-            float finalNum = (float)(Math.Max(num * 16 ?? 0, 1.0m));
-            Console.WriteLine(finalNum);
-            
-            num = 0.2340m;
-            finalNum = (float)(Math.Max(num * 16 ?? 0, 1.0m));
-            Console.WriteLine(finalNum);
-            Console.ReadLine();
+            TestClass1 tc1 = new TestClass1();
+            bool b = tc1.tc2 == null;
         }
 
+    }
+
+    public class TestClass1
+    {
+        public TestClass2 tc2 { get; set; }
+        public TestClass1()
+        {
+
+        }
+    }
+
+    public class TestClass2
+    {
     }
 }
