@@ -14,22 +14,27 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            TestClass1 tc1 = new TestClass1();
-            bool b = tc1.tc2 == null;
+            List<IColor> colors = new List<IColor>();
+            colors.Add(new Red());
+            colors.Add(new Blue());
+
+            var redColor = (Red)colors.FirstOrDefault(x => x.GetType().Equals(typeof(Red)));
         }
 
     }
 
-    public class TestClass1
+    public class Red : IColor
     {
-        public TestClass2 tc2 { get; set; }
-        public TestClass1()
-        {
-
-        }
+        public string name = "Red";
     }
 
-    public class TestClass2
+    public class Blue : IColor
     {
+        public string name = "Blue";
+    }
+
+    public interface IColor
+    {
+
     }
 }
