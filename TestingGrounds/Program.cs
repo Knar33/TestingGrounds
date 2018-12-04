@@ -14,27 +14,18 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            List<IColor> colors = new List<IColor>();
-            colors.Add(new Red());
-            colors.Add(new Blue());
+            List<string> strings = new List<string>();
+            strings.Add(null);
+            strings.Add(null);
+            strings.Add("a");
+            strings.Add("b");
 
-            var redColor = (Red)colors.FirstOrDefault(x => x.GetType().Equals(typeof(Red)));
+            var distinctStrings = strings.Distinct();
+            foreach(string distinctString in distinctStrings)
+            {
+                Console.WriteLine(distinctString);
+            }
+            Console.ReadLine();
         }
-
-    }
-
-    public class Red : IColor
-    {
-        public string name = "Red";
-    }
-
-    public class Blue : IColor
-    {
-        public string name = "Blue";
-    }
-
-    public interface IColor
-    {
-
     }
 }
