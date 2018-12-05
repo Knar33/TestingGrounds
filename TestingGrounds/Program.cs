@@ -14,18 +14,17 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            List<string> strings = new List<string>();
-            strings.Add(null);
-            strings.Add(null);
-            strings.Add("a");
-            strings.Add("b");
-
-            var distinctStrings = strings.Distinct();
-            foreach(string distinctString in distinctStrings)
-            {
-                Console.WriteLine(distinctString);
-            }
-            Console.ReadLine();
+            process(null);
         }
+
+        public static void process(Foo foo)
+        {
+
+        }
+    }
+
+    public class Foo
+    {
+        public string Bar { get; set; }
     }
 }
