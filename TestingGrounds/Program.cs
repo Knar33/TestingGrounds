@@ -14,17 +14,29 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            process(null);
+            List<string> videoGames = new List<string> { };
+            bool running = true;
+
+            while (running)
+            {
+                Console.Write("Enter a game, or type exit to quit: ");
+                string gameName = Console.ReadLine();
+
+                if (gameName == "exit")
+                {
+                    running = false;
+                    break;
+                }
+
+                videoGames.Add(gameName);
+
+                Console.WriteLine("Games List: ");
+                foreach (string game in videoGames)
+                {
+                    Console.WriteLine(game);
+                }
+                Console.WriteLine();
+            }
         }
-
-        public static void process(Foo foo)
-        {
-
-        }
-    }
-
-    public class Foo
-    {
-        public string Bar { get; set; }
     }
 }
