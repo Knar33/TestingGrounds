@@ -14,29 +14,28 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            List<string> videoGames = new List<string> { };
-            bool running = true;
+            string s = "I_like_cheese Love.";
 
-            while (running)
+            int exclamationLocation = 0;
+            bool foundExclamation = false;
+            for(int i = 0; i < s.Length; i++)
             {
-                Console.Write("Enter a game, or type exit to quit: ");
-                string gameName = Console.ReadLine();
-
-                if (gameName == "exit")
+                if (!foundExclamation && s[i] == '!')
                 {
-                    running = false;
-                    break;
+                    exclamationLocation = i;
+                    foundExclamation = true;
                 }
-
-                videoGames.Add(gameName);
-
-                Console.WriteLine("Games List: ");
-                foreach (string game in videoGames)
-                {
-                    Console.WriteLine(game);
-                }
-                Console.WriteLine();
             }
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < exclamationLocation; i++)
+            {
+                sb.Append(s[i]);
+            }
+
+            string output = s.Split('!')[0];
+
+            Console.ReadLine();
         }
     }
 }
