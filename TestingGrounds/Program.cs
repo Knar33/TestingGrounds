@@ -14,28 +14,12 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            string s = "I_like_cheese Love.";
-
-            int exclamationLocation = 0;
-            bool foundExclamation = false;
-            for(int i = 0; i < s.Length; i++)
+            Random random = new Random();
+            Console.Write("Pick 1 for Rock, 2 for Paper, 3 for scissors: ");
+            while (true)
             {
-                if (!foundExclamation && s[i] == '!')
-                {
-                    exclamationLocation = i;
-                    foundExclamation = true;
-                }
+                Console.WriteLine((new int[] { 1, -2 }).Contains((int.Parse(Console.ReadLine()) - 1) - random.Next(0, 2)) ? "You Win!" : "You Lose!");
             }
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < exclamationLocation; i++)
-            {
-                sb.Append(s[i]);
-            }
-
-            string output = s.Split('!')[0];
-
-            Console.ReadLine();
         }
     }
 }
