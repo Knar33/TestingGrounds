@@ -14,12 +14,9 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
             Console.Write("Pick 1 for Rock, 2 for Paper, 3 for scissors: ");
-            while (true)
-            {
-                Console.WriteLine((new int[] { 1, -2 }).Contains((int.Parse(Console.ReadLine()) - 1) - random.Next(0, 2)) ? "You Win!" : "You Lose!");
-            }
+            Random random = new Random();
+            while (true) Console.WriteLine((new int[] { 1, -2 }).Contains((int.Parse(Console.ReadLine()) - 1) - random.Next(0, 2)) ? "You Win!" : "You Lose!");
         }
     }
 }
