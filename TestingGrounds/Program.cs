@@ -16,12 +16,12 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            ValueTuple<string, string, string> a = Wtfmate("afad");
-        }
-
-        public static (string a, string b, string c) Wtfmate(string d)
-        {
-            return ("wat", "wat", "Wat");
+            int wageAnswer;
+            if (!int.TryParse(Console.ReadLine(), out wageAnswer))
+            {
+                Console.WriteLine("you messed up");
+            }
+            Console.ReadLine();
         }
     }
 }
