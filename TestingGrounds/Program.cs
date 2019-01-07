@@ -16,12 +16,14 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            int wageAnswer;
-            if (!int.TryParse(Console.ReadLine(), out wageAnswer))
-            {
-                Console.WriteLine("you messed up");
-            }
+            Console.WriteLine(stringyEnum.STRINGY1.ToString());
             Console.ReadLine();
         }
+    }
+
+    public enum stringyEnum
+    {
+        STRINGY1,
+        STRINGY2
     }
 }
