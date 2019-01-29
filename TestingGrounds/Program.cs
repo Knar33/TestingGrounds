@@ -16,14 +16,20 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(stringyEnum.STRINGY1.ToString());
+            var createy = new CreateyClass(0);
             Console.ReadLine();
         }
     }
 
-    public enum stringyEnum
+    public class CreateyClass
     {
-        STRINGY1,
-        STRINGY2
+        public CreateyClass(int recursion)
+        {
+            Console.WriteLine(recursion);
+            if (recursion < 10)
+            {
+                var recursiveCreatey = new CreateyClass(recursion + 1);
+            }
+        }
     }
 }
