@@ -16,20 +16,32 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            var createy = new CreateyClass(0);
+            for(int i = 0; i < 257; i++)
+            {
+                var packedByte = GeneratePackedField(i);
+                Console.WriteLine("{0} : {1}", i, Convert.ToString(packedByte, 2).PadLeft(8, '0'));
+            }
             Console.ReadLine();
         }
-    }
 
-    public class CreateyClass
-    {
-        public CreateyClass(int recursion)
+        private static byte GeneratePackedField(int colorCount)
         {
-            Console.WriteLine(recursion);
-            if (recursion < 10)
+            int packedFieldValue = 16;
+            if (colorCount > 0)
             {
-                var recursiveCreatey = new CreateyClass(recursion + 1);
+                packedFieldValue += 128;
             }
+
+            int globalColorTableSize = 0;
+            for (int p = 1; p < 8; p++)
+            {
+                if (colorCount > Math.Pow(2, p))
+                {
+                    globalColorTableSize++;
+                }
+            }
+            packedFieldValue += globalColorTableSize;
+            return Convert.ToByte(packedFieldValue);
         }
     }
 }
