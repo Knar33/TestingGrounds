@@ -16,7 +16,7 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            int a = calculatePositions(255, 7);
+            int a = calculatePositions(1, 2);
         }
 
         public static int calculatePositions(int colorCount, int colorTableSize)
