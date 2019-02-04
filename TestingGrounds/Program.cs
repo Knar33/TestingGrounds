@@ -16,32 +16,22 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            for(int i = 0; i < 257; i++)
-            {
-                var packedByte = GeneratePackedField(i);
-                Console.WriteLine("{0} : {1}", i, Convert.ToString(packedByte, 2).PadLeft(8, '0'));
-            }
-            Console.ReadLine();
+            int a = calculatePositions(255, 7);
         }
 
-        private static byte GeneratePackedField(int colorCount)
+        public static int calculatePositions(int colorCount, int colorTableSize)
         {
-            int packedFieldValue = 16;
-            if (colorCount > 0)
+            int outputCount = 0;
+            for (int i = 0; i < colorCount; i++)
             {
-                packedFieldValue += 128;
+                outputCount += 3;
             }
-
-            int globalColorTableSize = 0;
-            for (int p = 1; p < 8; p++)
+            int colorsRequired = (int)Math.Pow(2, (colorTableSize + 1));
+            for (int i = colorCount; i < colorsRequired; i++)
             {
-                if (colorCount > Math.Pow(2, p))
-                {
-                    globalColorTableSize++;
-                }
+                outputCount += 3;
             }
-            packedFieldValue += globalColorTableSize;
-            return Convert.ToByte(packedFieldValue);
+            return outputCount;
         }
     }
 }
