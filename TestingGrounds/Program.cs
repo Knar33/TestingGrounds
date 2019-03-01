@@ -17,8 +17,11 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            string a = "test";
-            string b = null + a;
+            string a = "D29";
+            string b = a.Substring(1, a.Length - 1);
+
+            a = "D290";
+            b = a.Substring(1, a.Length - 1);
         }
     }
 }
