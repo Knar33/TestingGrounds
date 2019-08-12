@@ -16,7 +16,8 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            string a = DateTime.Now.ToString("dddd");
+            Console.WriteLine(new Guid().ToString());
+            Console.ReadLine();
         }
     }
 }
