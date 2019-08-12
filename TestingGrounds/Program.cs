@@ -16,7 +16,7 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new Guid().ToString());
+            Console.WriteLine(Guid.NewGuid().ToString());
             Console.ReadLine();
         }
     }
