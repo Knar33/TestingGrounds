@@ -16,8 +16,14 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Guid.NewGuid().ToString());
-            Console.ReadLine();
+            var things = ReturnTwoThings();
+            string a = things.a;
+            int b = things.b;
+        }
+
+        public static (string a, int b) ReturnTwoThings()
+        {
+            return ("a string", 12345);
         }
     }
 }
