@@ -16,7 +16,7 @@ namespace TestingGrounds
     {
         static void Main(string[] args)
         {
-            var things = ReturnTwoThings();
+            var otherThings = ReturnTwoThings();
             string a = things.a;
             int b = things.b;
         }
