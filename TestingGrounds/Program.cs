@@ -9,21 +9,36 @@ using System.Threading.Tasks;
 using TestingGrounds.RateService;
 using System.Runtime.CompilerServices;
 using System.Net.Http;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace TestingGrounds
 {
+    public enum myEnum
+    {
+        [Description("String 1")]
+        Val1 = 0,
+        [Description("String 1")]
+        Val2 = 1
+    }
+
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var otherThings = ReturnTwoThings();
-            string a = things.a;
-            int b = things.b;
+            myEnum enummy = myEnum.Val1;
+            string val = enummy.ToDescriptionString();
+            Console.ReadLine();
         }
+    }
 
-        public static (string a, int b) ReturnTwoThings()
+    public static class Classy
+    {
+        public static string ToDescriptionString(this myEnum enummy)
         {
-            return ("a string", 12345);
+            FieldInfo info = enummy.GetType().GetField(enummy.ToString());
+            var attributes = (DescriptionAttribute[])info.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return attributes?[0].Description ?? enummy.ToString();
         }
     }
 }
